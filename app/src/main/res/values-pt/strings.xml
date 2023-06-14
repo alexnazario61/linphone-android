@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-<!ENTITY appName "Linphone">
+<!ENTITY appName "NCT Mobile">
 ]>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="service_description">Isso é necessário para receber chamadas em segundo plano</string>
-    <string name="sync_account_name">contactos</string>
+    <string name="sync_account_name">contatos</string>
     <string name="about_privacy_policy">Visite a nossa política de privacidade</string>
     <string name="logs_upload_failure">Falhado para carregar logs!</string>
     <string name="logs_reset_complete">Os registros foram limpos</string>
@@ -31,7 +31,7 @@
     <string name="transport_udp">UDP</string>
     <string name="transport_tcp">TCP</string>
     <string name="transport_tls">TLS</string>
-    <string name="app_description">o <i>libre</i> Cliente SIP</string>
+    <string name="app_description">O Cliente Sip NCT</string>
     <string name="status_connected">Conectado</string>
     <string name="status_not_connected">Não conectado</string>
     <string name="status_in_progress">Conexão em andamento</string>
@@ -43,7 +43,7 @@
     <string name="no_missed_call_history">Nenhuma chamada perdida em sua história</string>
     <string name="history_delete_one_dialog">Você quer excluir este registro\?</string>
     <string name="history_delete_many_dialog">Você quer excluir esses registros\?</string>
-    <string name="quit">Pára</string>
+    <string name="quit">Encerrar</string>
     <string name="no_contact">Não há contato no seu livro de endereços.</string>
     <string name="contact_filter_hint">Pesquisar contatos</string>
     <string name="contact_send_sms_invite_text">Olá, junte-se a mim no &appName;! Você pode baixá-lo gratuitamente em %s</string>

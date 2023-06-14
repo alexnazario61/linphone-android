@@ -19,11 +19,11 @@
             android:id="@+id/action_welcomeFragment_to_phoneAccountCreationFragment"
             app:destination="@id/phoneAccountCreationFragment" />
         <action
-            android:id="@+id/action_welcomeFragment_to_genericAccountWarningFragment"
-            app:destination="@id/genericAccountWarningFragment" />
+            android:id="@+id/action_welcomeFragment_to_qrCodeFragment"
+            app:destination="@id/qrCodeFragment" />
         <action
-            android:id="@+id/action_welcomeFragment_to_remoteProvisioningFragment"
-            app:destination="@id/remoteProvisioningFragment" />
+            android:id="@+id/action_welcomeFragment_to_genericAccountLoginFragment"
+            app:destination="@id/genericAccountLoginFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountLoginFragment"
@@ -41,11 +41,7 @@
         android:id="@+id/genericAccountWarningFragment"
         android:name="org.linphone.activities.assistant.fragments.GenericAccountWarningFragment"
         tools:layout="@layout/assistant_generic_account_warning_fragment"
-        android:label="GenericAccountWarningFragment" >
-        <action
-            android:id="@+id/action_genericAccountWarningFragment_to_genericAccountLoginFragment"
-            app:destination="@id/genericAccountLoginFragment" />
-    </fragment>
+        android:label="GenericAccountWarningFragment" />
     <fragment
         android:id="@+id/genericAccountLoginFragment"
         android:name="org.linphone.activities.assistant.fragments.GenericAccountLoginFragment"
@@ -59,14 +55,7 @@
         android:id="@+id/remoteProvisioningFragment"
         android:name="org.linphone.activities.assistant.fragments.RemoteProvisioningFragment"
         tools:layout="@layout/assistant_remote_provisioning_fragment"
-        android:label="RemoteProvisioningFragment" >
-        <action
-            android:id="@+id/action_remoteProvisioningFragment_to_qrCodeFragment"
-            app:destination="@id/qrCodeFragment" />
-        <action
-            android:id="@+id/action_remoteProvisioningFragment_to_echoCancellerCalibrationFragment"
-            app:destination="@id/echoCancellerCalibrationFragment" />
-    </fragment>
+        android:label="RemoteProvisioningFragment" />
     <fragment
         android:id="@+id/emailAccountCreationFragment"
         android:name="org.linphone.activities.assistant.fragments.EmailAccountCreationFragment"
@@ -119,7 +108,11 @@
         android:id="@+id/qrCodeFragment"
         android:name="org.linphone.activities.assistant.fragments.QrCodeFragment"
         tools:layout="@layout/assistant_qr_code_fragment"
-        android:label="QrCodeFragment" />
+        android:label="QrCodeFragment" >
+        <action
+            android:id="@+id/action_qrCodeFragment_to_echoCancellerCalibrationFragment"
+            app:destination="@id/echoCancellerCalibrationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/echoCancellerCalibrationFragment"
         android:name="org.linphone.activities.assistant.fragments.EchoCancellerCalibrationFragment"

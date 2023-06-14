@@ -2,7 +2,7 @@
 ## Start of default rc
 
 [sip]
-contact="Linphone Android" <sip:linphone.android@unknown-host>
+contact="NCT Mobile" <sip:NCT.Mobile@unknown-host>
 use_info=0
 use_ipv6=1
 keepalive_period=30000

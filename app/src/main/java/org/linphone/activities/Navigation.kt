@@ -66,7 +66,7 @@ fun popupTo(
 
 /* Main activity related */
 
-internal fun MainActivity.navigateToDialer(args: Bundle?) {
+internal fun MainActivity.navigateToDialer(args: Bundle? = null) {
     findNavController(R.id.nav_host_fragment).navigate(
         R.id.action_global_dialerFragment,
         args,
@@ -87,6 +87,14 @@ internal fun MainActivity.navigateToChatRoom(localAddress: String?, peerAddress:
     findNavController(R.id.nav_host_fragment).navigate(
         Uri.parse(deepLink),
         popupTo(R.id.masterChatRoomsFragment, true)
+    )
+}
+
+internal fun MainActivity.navigateToContacts() {
+    findNavController(R.id.nav_host_fragment).navigate(
+        R.id.action_global_masterContactsFragment,
+        null,
+        popupTo(R.id.masterContactsFragment, true)
     )
 }
 
@@ -1049,6 +1057,16 @@ internal fun WelcomeFragment.navigateToPhoneAccountCreation() {
     }
 }
 
+internal fun WelcomeFragment.navigateToNoPushWarning() {
+    if (findNavController().currentDestination?.id == R.id.welcomeFragment) {
+        findNavController().navigate(
+            R.id.action_welcomeFragment_to_genericAccountLoginFragment,
+            null,
+            popupTo()
+        )
+    }
+}
+
 internal fun WelcomeFragment.navigateToAccountLogin() {
     if (findNavController().currentDestination?.id == R.id.welcomeFragment) {
         findNavController().navigate(
@@ -1062,7 +1080,7 @@ internal fun WelcomeFragment.navigateToAccountLogin() {
 internal fun WelcomeFragment.navigateToGenericLoginWarning() {
     if (findNavController().currentDestination?.id == R.id.welcomeFragment) {
         findNavController().navigate(
-            R.id.action_welcomeFragment_to_genericAccountWarningFragment,
+            R.id.genericAccountLoginFragment,
             null,
             popupTo()
         )
@@ -1072,7 +1090,7 @@ internal fun WelcomeFragment.navigateToGenericLoginWarning() {
 internal fun WelcomeFragment.navigateToRemoteProvisioning() {
     if (findNavController().currentDestination?.id == R.id.welcomeFragment) {
         findNavController().navigate(
-            R.id.action_welcomeFragment_to_remoteProvisioningFragment,
+            R.id.qrCodeFragment,
             null,
             popupTo()
         )
@@ -1102,7 +1120,7 @@ internal fun AccountLoginFragment.navigateToPhoneAccountValidation(args: Bundle?
 internal fun GenericAccountWarningFragment.navigateToGenericLogin() {
     if (findNavController().currentDestination?.id == R.id.genericAccountWarningFragment) {
         findNavController().navigate(
-            R.id.action_genericAccountWarningFragment_to_genericAccountLoginFragment,
+            R.id.genericAccountLoginFragment,
             null,
             popupTo(R.id.welcomeFragment, popUpInclusive = false)
         )
@@ -1120,9 +1138,9 @@ internal fun GenericAccountLoginFragment.navigateToEchoCancellerCalibration() {
 }
 
 internal fun RemoteProvisioningFragment.navigateToQrCode() {
-    if (findNavController().currentDestination?.id == R.id.remoteProvisioningFragment) {
+    if (findNavController().currentDestination?.id == R.id.qrCodeFragment) {
         findNavController().navigate(
-            R.id.action_remoteProvisioningFragment_to_qrCodeFragment,
+            R.id.qr_code_capture_texture,
             null,
             popupTo()
         )
@@ -1132,7 +1150,7 @@ internal fun RemoteProvisioningFragment.navigateToQrCode() {
 internal fun RemoteProvisioningFragment.navigateToEchoCancellerCalibration() {
     if (findNavController().currentDestination?.id == R.id.remoteProvisioningFragment) {
         findNavController().navigate(
-            R.id.action_remoteProvisioningFragment_to_echoCancellerCalibrationFragment,
+            R.id.echoCancellerCalibrationFragment,
             null,
             popupTo()
         )
